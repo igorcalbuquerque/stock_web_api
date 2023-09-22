@@ -28,7 +28,7 @@ func (productController *ProductController) CreateProduct(c *gin.Context) {
 			"erro": err.Error(),
 		})
 		return
-	}
+	} // for up
 
 	var existingColor models.Color
 	resultColor := productController.DB.First(&existingColor, "id = ?", newProduct.ColorID)
