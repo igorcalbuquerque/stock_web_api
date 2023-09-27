@@ -27,7 +27,8 @@ func SetupRouter(db *gorm.DB) *gin.Engine {
 	r.DELETE("/colors/:id", colorController.DeleteColor)
 	r.GET("/colors/:id", colorController.GetColorById)
 	// CRUD Products
-	r.GET("/products", productController.GetProducts)
+	r.GET("/products", productController.GetAllProducts)
+	r.GET("/productstock", productController.GetProducts) // Products with stock > 0
 	r.POST("/products", productController.CreateProduct)
 
 	return r
